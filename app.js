@@ -40,29 +40,3 @@ app.get('/auth', (req, res) => {
 
 app.listen(3000, () => console.log("listening on http://localhost:3000"));
 
-
-/*
-Após estabelecer a conexão com o websocket, deve-se enviar o evento de autenticação:
-
-{
-
-  "event":"auth",
-
-    "command":{
-
-  "token":"123128371623="
-
-}
-
-}
-
-Retorno:
-
-{
-
-  "event":"auth",
-
-    "success":true
-
-}
- */
