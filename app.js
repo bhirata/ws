@@ -5,8 +5,10 @@
   var app = require('express')();
   var WebSocket = require('ws');
 
+  require('dotenv').config({silent: true});
 
-  const ws = new WebSocket('ws://localhost:6001');
+  let wsPort = process.env.WS_PORT || 6005;
+  const ws = new WebSocket('ws://localhost:' + wsPort);
 
   ws.onopen = function () {
     console.log("Connected to WebSocket Server");
@@ -40,6 +42,7 @@
 
   });
 
+  let port = process.env.PORT || 3000;
 
   app.listen(3000, () => console.log("listening on http://localhost:3000"));
 
